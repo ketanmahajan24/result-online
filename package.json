@@ -1,0 +1,20 @@
+{
+  "name": "marksheet",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Ketan Mahajan",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.21.0",
+    "method-override": "^3.0.0",
+    "mysql2": "^3.11.3",
+    "node": "^22.8.0",
+    "nodemon": "^3.1.4"
+  },
+  "description": ""
+}
