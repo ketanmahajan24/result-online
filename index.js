@@ -3,7 +3,7 @@
 require('dotenv').config(); // env require
 
 const express = require('express');//express require
-const mysql = require('mysql2');//mysql require
+//const mysql = require('mysql2');//mysql require
 const app = express();
 
 const path=require("path");
@@ -17,12 +17,12 @@ app.set("view engine","ejs");
 app.set("views",path.join(__dirname,"/views"))
 
 //connecting to the mysql 
-const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    database: 'board',
-    password:'ketan24'
-  });
+// const connection = mysql.createConnection({
+//     host: 'localhost',
+//     user: 'root',
+//     database: 'board',
+//     password:'ketan24'
+//   });
 ////////////////    QUERY FOR DISPLAY ALL STUDENTS AND MARKS DETAILS ONE DASHBOARD ADMIN FRO STUDENT MARKS TABLE (JOIN) 
   let q2=`SELECT s.rollno ,s.sname,s.fname,s.mname,
                 appno,status,
