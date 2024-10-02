@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Admin </title>
+
+  <style>
+     table {
+      border-collapse: collapse;
+      margin:  8px auto;
+      font-size: 12px;
+      border: 2px solid black;
+      }
+      td{
+       text-align: center;
+        padding: 2px 5px;
+        border: 1px solid black;
+    }
+</style>
+</head>
+<body>
+
+<h3> Students Result : </h3>
+
+
+<button style="margin: 20px ; text-decoration: none;"><a href="http://localhost:8080/admin/addstu">Add New Student</a></button>
+  <table>
+    <thead>
+      <tr>
+        <td>ROll No</td>
+        <td>Application No</td>
+        <td>Student Name </td>
+        <td>Father Name</td>
+        <td>Mother Name</td>
+
+        <td>Hindi Th</td>
+        <td>Hindi Pr</td>
+        <td>Hindi To</td>
+
+        <td>English Th</td>
+        <td>English Pr</td>
+        <td>English To</td>
+
+        <td>Maths Th</td>
+        <td>Maths Pr</td>
+        <td>Maths To</td>
+
+        <td>Physics Th</td>
+        <td>Physics Pr</td>
+        <td>Physics To</td>
+
+        <td>CHemistry Th</td>
+        <td>CHemistry Pr</td>
+        <td>CHemistry To</td>
+
+        <td><b>Grand Total</b></td>
+        <td><b>Result </b></td>
+        <td><b>Perc(%)</b></td>
+        <td><b>Grade </b></td>
+       
+     
+      
+      </tr>
+    </thead>
+    <tbody>
+      <%for(allstudent of allstudents){%>    
+      <tr>
+        <td><%=allstudent.rollno%></td>
+        <td><%=allstudent.appno%></td>
+
+        <td><%=allstudent.sname%> </td>
+        <td><%=allstudent.fname%></td>
+        <td><%=allstudent.mname%></td>
+
+        <td><%=allstudent.hindi_th%></td>
+        <td><%=allstudent.hindi_pr%></td>
+        <td><b><%=allstudent.hindi_total%></b></td>
+
+        <td><%=allstudent.eng_th%></td>
+        <td><%=allstudent.eng_pr%></td>
+        <td><b><%=allstudent.eng_total%></b></td>
+
+        <td><%=allstudent.maths_th%></td>
+        <td><%=allstudent.maths_pr%></td>
+        <td><b><%=allstudent.maths_total%></b></td>
+
+        <td><%=allstudent.phy_th%></td>
+        <td><%=allstudent.phy_pr%></td>
+        <td><b><%=allstudent.phy_total%></b></td>
+
+        <td><%=allstudent.chem_th%></td>
+        <td><%=allstudent.chem_pr%></td>
+        <td><b><%=allstudent.chem_total%></b></td>
+
+        <td><b><%=allstudent.grand_total%></b></td>
+
+        <td><b>Grand Total</b></td>
+        <td><b><%=allstudent.stu_per%></b></td>
+
+        <td><b><%=allstudent.stu_grade%></b></td>
+       
+        <td>
+          <form  method="get" action="/student-marksheet/<%=allstudent.rollno%>/edit">
+              <button>Edit-Result</button></b>
+          </form>
+      </td>
+        <td>
+            <form  method="POST" action="/student-marksheet/<%=allstudent.rollno%>?_method=DELETE">
+              <button>Delete</button></b>
+            </form>
+        </td>
+       
+          
+         
+
+      </tr>
+      <%}%>
+    </tbody>
+  
+</body>
+</html>

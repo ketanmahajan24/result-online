@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Student Marks</title>
+
+    <style>
+        body{
+            background: rgb(172, 215, 222);
+        }
+      
+       table {
+            border-collapse: collapse;
+            margin:  10px auto;
+            font-size: 18px;
+            border: 2px solid black;
+        }
+       
+       
+        .table-2 td{
+            text-align: center;
+            margin: 20px auto;
+            border: 2px solid black;
+            padding: 4px 55px;
+            
+            background: rgb(241, 248, 177);
+        }
+        .table-marks td{
+            text-align: center;
+            margin: 20px auto;
+            border: 2px solid black;
+            padding: 5px 50px;
+            background: rgb(253, 253, 160);
+    
+        }
+        .table-marks thead td{
+            background: rgb(85, 170, 183);  
+        }
+        .enter-marks{
+            text-align: center;
+            /* padding: 2px; */
+            background: rgb(253, 253, 160);
+            resize: none;
+            font-size: 18px;
+        }
+        </style></head>
+        
+<body>
+    
+    <h1>Edit Student Marks: </h1>
+    <form method="post" action="/student-marksheet/<%=student.rollno%>?_method=patch">
+          
+    <table class="table-2">
+        
+        <tr> 
+            <td>Student Name</td> <td><%=student.sname%></td>
+        </tr>
+        <tr>
+            <td>Father's Name</td> <td><%=student.fname%></td>
+        </tr>
+        <tr>
+            <td>Mother's Name</td> <td><%=student.mname%></td>
+        </tr>
+    </table>
+
+  
+
+    
+<table class="table-marks">
+    <thead>
+      <tr>
+          <td><B>Subject code </B></td>
+          <td><B>Subject Name</B></td>
+          <td><B>Theory Marks</B></td>
+          <td><B>Practical Marks</B></td>
+          <td><B>Total Marks </B></td>
+          <td><B>Remark</B></td>
+      </tr>
+    </thead>
+   <tbody>
+      <tr> <td  colspan="6"  style="height: 20px;"> </td></tr>
+      <tr>
+          <td>10</td>
+          <td>HINDI</td>
+           <td><textarea class="enter-marks"  name="hindi_th" maxlength="2" cols="5"rows="1" ><%=student.hindi_th%> </textarea></td>
+           <td><textarea class="enter-marks"  name="hindi_pr" maxlength="2" cols="5"rows="1" ><%=student.hindi_pr%> </textarea></td>
+          <td><%=student.hindi_total%></td>
+          <td>A</td>
+        
+        </tr>
+        <tr>
+          <td>20</td>
+          <td>ENGLISH</td>
+           <td><textarea class="enter-marks"  name="eng_th" maxlength="2" cols="5"rows="1" > <%=student.eng_th%> </textarea></td>
+           <td><textarea class="enter-marks"  name="eng_pr" maxlength="2" cols="5"rows="1" ><%=student.eng_pr%> </textarea></td>
+          <td><%=student.eng_total%></td>     <td>A</td>
+        
+        </tr>
+        <tr>
+          <td>30</td>
+          <td>MATHEMATICS</td>
+          <td><textarea class="enter-marks"  name="maths_th" maxlength="2" cols="5"rows="1" > <%=student.maths_th%> </textarea></td>
+          <td><textarea class="enter-marks"  name="maths_pr" maxlength="2" cols="5"rows="1" > <%=student.maths_pr%> </textarea></td>
+          <td><%=student.maths_total%></td>
+          <td>A</td>
+        
+        </tr>
+        <tr>
+          <td>40</td>
+          <td>PHYSICS</td>
+          <td><textarea class="enter-marks"  name="phy_th" maxlength="2" cols="5"rows="1" > <%=student.phy_th%> </textarea></td>
+          <td><textarea class="enter-marks"  name="phy_pr" maxlength="2" cols="5"rows="1" > <%=student.phy_pr%> </textarea></td>
+          <td><%=student.phy_total%></td>
+          <td>A</td>
+        
+        </tr>
+        <tr>
+          <td>50</td>
+          <td>CHEMISTRY</td>
+          <td><textarea class="enter-marks"  name="chem_th" maxlength="2" cols="5"rows="1" > <%=student.chem_th%> </textarea></td>
+          <td><textarea class="enter-marks"  name="chem_pr" maxlength="2" cols="5"rows="1" > <%=student.chem_pr%> </textarea></td>
+          <td><%=student.chem_total%></td>
+          <td>A</td>
+        
+        </tr>
+        <tr> <td  colspan="6"  style="height: 20px;"></td></tr>
+        <tr >
+        
+          <td  style="background-color: rgb(148, 255, 152);"   colspan="6">Grand Total:<b> <%=student.grand_total%></b>/500</td>
+   
+        
+        
+  
+        </tr>
+  
+        
+       
+   </tbody>
+  </table>
+  
+  <button style="width: 200px;height: 30px; margin: 5px 0 10px 600px ;background: #00fb32; border-radius: 5px; ">Submit Marks</button>
+</form>
+    
+
+
+    
+</body>
+</html>

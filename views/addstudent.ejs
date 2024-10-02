@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Student</title>
+<style>
+    label{
+        margin: 20px;
+    }
+    input{
+        margin-bottom:10px;
+    }
+</style>
+
+</head>
+<body>
+
+    <form method="POST" action="http://localhost:8080/admin">
+
+    <label for="stu_rollno">Enter Enter Student ROll No.</label>    
+    <input type="text" id="stu_rollno" name="rollno" placeholder="Enter ROll Number">
+
+    <hr>
+
+    <label for="hindi_th">Enter Hindi Theory Marks</label>    
+    <input type="text" id="hindi_th" name="hindi_th">
+    <br>
+    <label for="hindi_pr">Enter Hindi Practical Marks</label>    
+    <input type="text"  id="hindi_tr" name="hindi_pr" >
+    <hr>
+    
+    <label for="eng_th">Enter English Theory Marks</label>
+    <input type="text"  id="eng_th"  name="eng_th">
+    <br>
+    <label for="eng_pr">Enter English Practical Marks</label>
+    <input type="text"  id="eng_tr" name="eng_pr">
+    <hr>
+
+    <label for="maths_th">Enter Maths Theory Marks</label>
+    <input type="text" id="maths_pr "name="maths_th">
+    <br>
+    <label for="maths_pr">Enter Maths Practical Marks</label>
+    <input type="text" id="maths_pr "name="maths_pr">
+    <hr>
+  
+    <label for="phy_th">Enter Physics Theory Marks</label>
+    <input type="text" id="phy_th" name="phy_th" >
+    <br> 
+    <label for="phy_pr">Enter Physics  Practical Marks</label>
+    <input type="text" id="phy_pr" name="phy_pr" >
+    <hr>
+  
+    <label for="chem_th">Enter Chemistry Theory Marks</label>
+    <input type="text" id="chem_th" name="chem_th"><br>
+
+    <label for="chem_pr">Enter Chemistry Practical Marks</label>
+    <input type="text" id="chem_pr" name="chem_pr">
+    <hr>
+
+    <button style="margin:50px 600px;">Submit</button>    
+</form>
+</body>
+</html>

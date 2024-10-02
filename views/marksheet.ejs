@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HSSC-2024</title>
+    <style>
+    body{
+        background: rgb(172, 215, 222);
+    }
+  
+   table {
+        border-collapse: collapse;
+        margin:  10px auto;
+        font-size: 16px;
+     
+        border: 2px solid black;
+    }
+   
+   .table-1 td{
+       text-align: center;
+        padding: 2px 15px;
+        border: 1px solid black;
+    }
+    .table-2 td{
+        text-align: center;
+        margin: 20px auto;
+        border: 2px solid black;
+        padding: 2px 55px;
+        
+        background: rgb(241, 248, 177);
+    }
+    .table-marks td{
+        text-align: center;
+        margin: 20px auto;
+        border: 2px solid black;
+        padding: 2px 55px;
+        background: rgb(253, 253, 160);
+
+    }
+    .table-marks thead td{
+        background: rgb(85, 170, 183);  
+    }
+    </style>
+
+</head>
+<body>
+  
+<div class="head">
+    <h2  style=" margin: 10px 238px; color: brown;">Higher Secondary School Certificate Examination (HSSC)-12TH Class Result-2024 </h2>
+
+     <table class="table-1">
+     <%for(student of students){%>    
+        <tr>
+            <td><B>Centre code </B></td>
+            <td><B>School code </B></td>
+            <td><B>Enrollment No </B></td>
+            <td><B>Regular/Private</B></td>
+            <td><B>Application No </B></td>
+            <td><B>Roll Number</B></td>
+        </tr>
+        
+        
+        <tr>
+            <td> 111111</td>
+            <td> 222222</td>
+            <td> 333333</td>
+            <td><%=student.status%></td>
+            <td><%=student.appno%></td>
+            <td><%=student.rollno%></td>
+        </tr>
+
+     </table>
+</div>
+
+<table class="table-2">
+        
+    <tr> 
+        <td>Student Name</td> <td><%=student.sname%></td>
+    </tr>
+    <tr>
+        <td>Father's Name</td> <td><%=student.fname%></td>
+    </tr>
+    <tr>
+        <td>Mother's Name</td> <td><%=student.mname%></td>
+    </tr>
+  
+</table>
+
+<h2 style="color: green; margin-left: 200px;">Result-PASS</h2>
+
+  
+<table class="table-marks">
+  <thead>
+    <tr>
+        <td><B>Subject code </B></td>
+        <td><B>Subject Name</B></td>
+        <td><B>Theory Marks</B></td>
+        <td><B>Practical Marks</B></td>
+        <td><B>Total Marks </B></td>
+        <td><B>Remark</B></td>
+    </tr>
+  </thead>
+ <tbody>
+    <tr> <td  colspan="6"  style="height: 20px;"> </td></tr>
+    <tr>
+        <td>10</td>
+        <td>HINDI</td>
+        <td><%=student.hindi_th%></td>
+        <td><%=student.hindi_pr%></td>
+        <td><%=student.hindi_total%></td>
+        <td>A</td>
+      
+      </tr>
+      <tr>
+        <td>20</td>
+        <td>ENGLISH</td>
+        <td><%=student.eng_th%></td>
+        <td><%=student.eng_pr%></td>
+        <td><%=student.eng_total%></td>
+        <td>A</td>
+      
+      </tr>
+      <tr>
+        <td>30</td>
+        <td>MATHEMATICS</td>
+        <td><%=student.maths_th%></td>
+        <td><%=student.maths_pr%></td>
+        <td><%=student.maths_total%></td>
+        <td>A</td>
+      
+      </tr>
+      <tr>
+        <td>40</td>
+        <td>PHYSICS</td>
+        <td><%=student.phy_th%></td>
+        <td><%=student.phy_pr%></td>
+        <td><%=student.phy_total%></td>
+        <td>A</td>
+      
+      </tr>
+      <tr>
+        <td>50</td>
+        <td>CHEMISTRY</td>
+        <td><%=student.chem_th%></td>
+        <td><%=student.chem_pr%></td>
+        <td><%=student.chem_total%></td>
+        <td>A</td>
+      
+      </tr>
+      <tr> <td  colspan="6"  style="height: 20px;"></td></tr>
+      <tr >
+        <td  style="background-color: rgb(148, 255, 152);" colspan="3">Grade: <B>A++</B></td>
+        <td  style="background-color: rgb(148, 255, 152);"   colspan="3">Grand Total:<b> <%=student.grand_total%></b>/500</td>
+ 
+      
+      
+
+      </tr>
+
+      
+     
+ </tbody>
+</table>
+<%}%>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student-Login</title>
+        
+    <style>
+        body{
+        background: rgb(172, 215, 222);
+    }
+    .login-div{
+        margin: 100px 30% ;   
+    }
+    </style>
+</head>
+<body>
+    <h2  style=" margin: 10px 238px; color: brown;">Higher Secondary School Certificate Examination (HSSC)-12TH Class Result-2024 </h2>
+
+
+<button style="margin:10px 10px 10px 700px  ;"><a href="http://localhost:8080/hssc/admin-login">Admin Login</a></button>
+    
+    <div class="login-div"> 
+    
+    <form method="post" action="http://localhost:8080/hssc/student-marksheet">
+    
+        <label style="margin: 10px;" for="roll" >Enter Roll No.</label>
+        <input style="margin: 10px;" type="text" name="rollno" id="roll"> 
+
+        <br>
+        
+        <label style="margin: 10px;"for="app">Enter Application No.</label>
+        <input style="margin: 10px;" type="text" name="appno" id="app">
+        
+        <br>
+        
+        <button  style="margin:10px 150px; width: 100px; background-color: rgb(0, 187, 255); border-radius: 5px;"> Submit </button>     
+
+    </form>
+
+</div>
+    
+</body>
+</html>
