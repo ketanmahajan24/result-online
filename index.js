@@ -263,6 +263,6 @@ app.get('/admin-login/admin', (req, res) => {
 
 
 //app listening 
-app.listen(process.env.PORT,()=>{
-    console.log(`server listening on ${process.env.PORT}`);
+app.listen(process.env.DB_PORT,()=>{
+    console.log(`server listening on ${process.env.DB_PORT}`);
 });
