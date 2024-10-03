@@ -3,7 +3,7 @@
 require('dotenv').config(); // env require
 
 const express = require('express');//express require
-const mysql = require('mysql2/promise');//mysql require
+const mysql = require('mysql2');//mysql require
 const app = express();
 
 const path=require("path");
@@ -17,39 +17,13 @@ app.set("view engine","ejs");
 app.set("views",path.join(__dirname,"/views"))
 
 //connecting to the mysql 
-
-
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-// Async function to connect to the MySQL database
-async function connectToDatabase() {
-  
 const connection = mysql.createConnection({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASS,
-    database: process.env.DB_NAME,
-    port:process.env.DB_PORT
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASS,
+  database: process.env.DB_NAME,
+  port: process.env.PORT
   });
-  
-    try {
-      const connection = await mysql.createConnection(connectionConfig);
-      console.log('Connected to MySQL database');
-  
-      // You can execute queries here
-      const [rows, fields] = await connection.execute('SELECT * FROM your_table_name');
-      console.log('Query results:', rows);
-  
-      // Close the connection
-      await connection.end();
-    } catch (error) {
-      console.error('Error connecting to MySQL:', error.message);
-    }
-  }
-  ///////////////////////////////////////////////////////////////////////////////////////////////////////
-
 ////////////////    QUERY FOR DISPLAY ALL STUDENTS AND MARKS DETAILS ONE DASHBOARD ADMIN FRO STUDENT MARKS TABLE (JOIN) 
   let q2=`SELECT s.rollno ,s.sname,s.fname,s.mname,
                 appno,status,
@@ -264,13 +238,7 @@ app.get('/admin-login/admin', (req, res) => {
 
 
 
-
-
-
-
-
-
-
+//app listening 
 app.listen(process.env.DB_PORT,()=>{
     console.log(`server listening on ${process.env.DB_PORT}`);
 });
