@@ -21,7 +21,9 @@ app.set("views",path.join(__dirname,"/views"))
       host: process.env.DB_HOST,
     user: process.env.DB_USER,
     password: process.env.DB_PASS,
-    database: process.env.DB_NAME
+    database: process.env.DB_NAME,
+    port: process.env.DB_PORT
+  
   });
 ////////////////    QUERY FOR DISPLAY ALL STUDENTS AND MARKS DETAILS ONE DASHBOARD ADMIN FRO STUDENT MARKS TABLE (JOIN) 
   let q2=`SELECT s.rollno ,s.sname,s.fname,s.mname,
